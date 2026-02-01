@@ -1,0 +1,10 @@
+ .git
+ .github
+ .windsurf
+ .claude
+ local
+ bin
+ coverage.out
+ .DS_Store
+ examples
+ docs

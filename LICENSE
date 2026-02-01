@@ -1,0 +1,161 @@
+Hybrowse Source-Available License (HSAL) v1.0
+ 
+ Copyright 2026 Hybrowse / Arens & Gerstner GbR
+ 
+ This license applies to the Licensed Work.
+ 
+ This license is **not** an Open Source license.
+ It allows you to read and modify the source code, and to use it under the
+ conditions below.
+
+ ---
+
+ 1. Definitions
+
+ "Licensor" means Hybrowse / Arens & Gerstner GbR.
+
+ "Licensed Work" means the contents of this repository.
+
+ "You" means the individual or legal entity exercising rights under this
+ license.
+
+ "Affiliate" means any entity that controls, is controlled by, or is under
+ common control with an entity. "Control" means direct or indirect control of
+ more than 50% of the voting interests or the power to direct management.
+
+ "Third Party" means any person or entity other than You and Your Affiliates.
+
+ "Internal Use" means use of the Licensed Work by You, Your Affiliates, and
+ Third Parties acting solely on Your behalf (for example, contractors and cloud
+ infrastructure providers).
+
+ "Redistribute" means to provide or make available the Licensed Work (or any
+ derivative works) to any Third Party other than for Internal Use, including by
+ publishing source code or distributing it outside of Internal Use.
+
+ "Production Use" means use of the Licensed Work to provide gameplay or
+ service functionality to end users (including running game servers that accept
+ player connections), other than solely for evaluation, testing, or
+ development.
+
+ "Network" means a single player-facing Hytale server offering operated under
+ the same brand, domain(s), and/or shared progression/economy, where players can
+ reasonably be considered part of one combined service (including multiple
+ backend servers/shards/regions).
+
+ "Peak CCU" means the maximum number of concurrently connected players across
+ the entire Network in a rolling 30 day window.
+
+ "Game Server" means a running Hytale dedicated server instance or backend
+ shard that serves gameplay for the Network (including regional replicas).
+ For avoidance of doubt, multiple containers/pods running a server instance
+ count as multiple Game Servers.
+
+ "Peak Game Server Count" means the maximum number of Game Servers
+ simultaneously running for the Network in a rolling 30 day window.
+
+ "Managed Service" means making the Licensed Work available to third parties
+ as a hosted or managed offering (including server hosting, managed fleets,
+ server rentals, multi-tenant platforms, or any service where third parties run
+ or control servers backed by the Licensed Work).
+
+ "Commercial Agreement" means a written agreement with Licensor granting
+ commercial usage rights outside the free use grants in this license.
+
+ "Permitted Free Use" means Production Use that satisfies all of:
+ - You are not providing a Managed Service.
+ - The use is for a self-operated network/community.
+ - Peak CCU <= 250.
+ - Peak Game Server Count <= 10.
+
+ 2. Grant of rights (source available)
+
+ Subject to the restrictions below, Licensor grants You a worldwide,
+ non-exclusive, non-transferable right to:
+
+ - access and read the source code of the Licensed Work
+ - copy the Licensed Work for Internal Use
+ - modify the Licensed Work and create derivative works
+ - run the Licensed Work for evaluation, testing, and development
+
+ You may permit Internal Use by Your Affiliates and Third Parties acting solely
+ on Your behalf.
+
+ 3. Production use
+
+ You may use the Licensed Work in Production Use only if one of the following is
+ true:
+
+ - your use qualifies as Permitted Free Use, or
+ - you have a Commercial Agreement with Licensor.
+
+ 3.1 Threshold exceedance transition period
+
+ Notwithstanding Section 3, if your use stops qualifying as Permitted Free Use
+ solely because you exceed Peak CCU and/or Peak Game Server Count, you may
+ continue Production Use for up to 30 days solely to:
+
+ - enter into a Commercial Agreement with Licensor, or
+ - reduce usage so that it again qualifies as Permitted Free Use, or
+ - cease using the Licensed Work in production.
+
+ If you cure within this period, your rights under this license continue.
+
+ This transition period does not apply to Managed Service usage.
+
+ 4. Managed Service prohibition
+
+ You may not use the Licensed Work as part of a Managed Service unless you
+ have a Commercial Agreement.
+
+ This restriction applies regardless of Peak CCU, Peak Game Server Count, or
+ whether the Managed Service is offered for free or for a fee.
+
+ 5. Redistribution
+
+ For avoidance of doubt, Internal Use is not Redistribution.
+
+ You may redistribute verbatim copies of the Licensed Work, and you may
+ redistribute Your derivative works, only if:
+
+ - the redistribution is in source form
+ - you include this license text in full
+ - you do not remove or alter copyright, trademark, or attribution notices
+ - you clearly mark Your changes
+ - the recipient’s use remains subject to this license
+
+ You may not redistribute the Licensed Work in a way that enables or primarily
+ facilitates Managed Service usage without a Commercial Agreement.
+
+ 6. Trademarks
+
+ This license does not grant any rights to use Licensor’s trademarks.
+ Trademark guidance is documented in `TRADEMARKS.md`.
+
+ 7. Termination
+
+ Any use of the Licensed Work in violation of this license automatically
+ terminates Your rights under this license.
+
+ If you rely on the threshold exceedance transition period in Section 3.1 and
+ you do not cure within the 30 day period, your rights under this license
+ terminate automatically at the end of that period.
+
+ 8. Disclaimer of warranty
+
+ THE LICENSED WORK IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+ OR IMPLIED, INCLUDING BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY,
+ FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT.
+
+ 9. Limitation of liability
+
+ TO THE EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT WILL LICENSOR BE
+ LIABLE FOR ANY DAMAGES ARISING FROM THE USE OR INABILITY TO USE THE LICENSED
+ WORK.
+
+ 10. Enforcement
+
+ Unauthorized Production Use or Managed Service usage without a Commercial
+ Agreement is outside the scope of the rights granted by this license.
+ Licensor reserves all rights and remedies available under applicable law,
+ including injunctive relief.

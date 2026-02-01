@@ -1,0 +1,66 @@
+version: "3"
+
+tasks:
+  fmt:
+    cmds:
+      - go fmt ./...
+
+  vet:
+    cmds:
+      - go vet ./...
+
+  lint:
+    cmds:
+      - golangci-lint run
+
+  tidy:
+    cmds:
+      - go mod tidy
+
+  test:
+    vars:
+      PKGS:
+        sh: go list ./... | grep -v '/examples' | paste -sd' ' -
+    cmds:
+      - go test {{.PKGS}}
+
+  cover:
+    vars:
+      PKGS:
+        sh: go list ./... | grep -v '/examples' | paste -sd' ' -
+      COVERPKG:
+        sh: go list ./... | grep -v '/examples' | paste -sd, -
+    cmds:
+      - go test -count=1 {{.PKGS}} -coverpkg={{.COVERPKG}} -coverprofile=coverage.out -covermode=atomic
+      - go tool cover -func=coverage.out | tail -n 1
+
+  race:
+    vars:
+      PKGS:
+        sh: go list ./... | grep -v '/examples' | paste -sd' ' -
+    cmds:
+      - go test -race {{.PKGS}}
+
+  ci:
+    cmds:
+      - task: fmt
+      - task: vet
+      - task: lint
+      - task: cover
+
+  build:
+    cmds:
+      - mkdir -p bin
+      - go build -o bin/hytale-session-token-broker ./cmd/hytale-session-token-broker
+
+  run:
+    cmds:
+      - go run ./cmd/hytale-session-token-broker -config config.yaml
+
+  docker:build:
+    cmds:
+      - docker build -t hytale-session-token-broker:local .
+
+  docker:run:
+    cmds:
+      - docker run --rm -p 8080:8080 hytale-session-token-broker:local
