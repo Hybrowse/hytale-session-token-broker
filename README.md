@@ -1,3 +1,6 @@
+[![Discord](https://img.shields.io/discord/1459154799407665397?label=Join%20Discord)](https://hybrowse.gg/discord)
+[![Docker Pulls](https://img.shields.io/docker/pulls/hybrowse/hytale-session-token-broker)](https://hub.docker.com/r/hybrowse/hytale-session-token-broker)
+
 # Hytale Session Token Broker
 
 Small Go service + CLI that authenticates against Hytale via OAuth Device Flow, persists refresh tokens, and mints short-lived game session tokens for your servers.
@@ -28,6 +31,10 @@ This broker is part of the **Hybrowse Server Stack** — production-grade buildi
 
 - **Image (Docker Hub)**: [`hybrowse/hytale-session-token-broker`](https://hub.docker.com/r/hybrowse/hytale-session-token-broker)
 - **Mirror (GHCR)**: [`ghcr.io/hybrowse/hytale-session-token-broker`](https://ghcr.io/hybrowse/hytale-session-token-broker)
+
+## Community
+
+Join the **Hybrowse Discord Server** to get help and stay up to date: https://hybrowse.gg/discord
 
 ## How it works
 
