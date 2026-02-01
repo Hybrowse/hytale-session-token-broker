@@ -17,13 +17,12 @@ This broker solves that by:
 - keeping long-lived OAuth credentials in one place (persisted refresh tokens)
 - minting short-lived `session_token` + `identity_token` on demand via HTTP
 
-## Works great with the Hytale Server Docker Image
+## Hybrowse Server Stack
 
-This broker is designed to pair well with:
+This broker is part of the **Hybrowse Server Stack** — production-grade building blocks for running Hytale at scale:
 
-- **Hytale Server Docker Image by Hybrowse**: https://github.com/Hybrowse/hytale-server-docker
-
-That image can fetch `session_token` / `identity_token` from this broker at container startup, so you can skip the interactive `/auth` flow.
+- [Hybrowse/hytale-server-docker](https://github.com/Hybrowse/hytale-server-docker) — can fetch `session_token` / `identity_token` from this broker at container startup to skip interactive `/auth`
+- [Hybrowse/hyrouter](https://github.com/Hybrowse/hyrouter) — stateless QUIC entrypoint and referral router for routing players to backends
 
 ## How it works
 
