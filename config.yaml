@@ -1,0 +1,17 @@
+http:
+  addr: ":8080"
+  bearer_token: ""
+store:
+  path: "/app/data/state.json"
+oauth:
+  client_id: "hytale-server"
+  scope: "openid offline auth:server"
+  device_auth_url: "https://oauth.accounts.hytale.com/oauth2/device/auth"
+  token_url: "https://oauth.accounts.hytale.com/oauth2/token"
+hytale:
+  account_data_base_url: "https://account-data.hytale.com"
+  sessions_base_url: "https://sessions.hytale.com"
+accounts: {}
+defaults:
+  account: "default"
+  profile_uuids: []

@@ -1,0 +1,55 @@
+ name: Bug report
+ description: Report a problem with the Hytale Session Token Broker
+ title: "bug: "
+ labels:
+   - bug
+ body:
+   - type: input
+     id: image
+     attributes:
+       label: Image tag
+       description: Which broker image tag did you run?
+       placeholder: hybrowse/hytale-session-token-broker:latest
+     validations:
+       required: true
+
+   - type: input
+     id: platform
+     attributes:
+       label: Host platform
+       description: OS and architecture (amd64/arm64)
+       placeholder: Ubuntu 24.04 (amd64)
+     validations:
+       required: true
+
+   - type: textarea
+     id: how
+     attributes:
+       label: How did you run it?
+       description: Paste your docker compose service or docker run command
+       render: shell
+     validations:
+       required: true
+
+   - type: textarea
+     id: expected
+     attributes:
+       label: Expected behavior
+     validations:
+       required: true
+
+   - type: textarea
+     id: actual
+     attributes:
+       label: Actual behavior
+     validations:
+       required: true
+
+   - type: textarea
+     id: logs
+     attributes:
+       label: Logs
+       description: Please redact secrets (tokens, credentials) before posting.
+       render: text
+     validations:
+       required: false

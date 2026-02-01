@@ -1,0 +1,11 @@
+ blank_issues_enabled: false
+ contact_links:
+    - name: Ask a question in discussions
+      url: https://github.com/Hybrowse/hytale-session-token-broker/discussions
+      about: Please ask questions in discussions.
+    - name: Discuss on Discord
+      url: https://hybrowse.gg/discord
+      about: Alternatively, discuss on our Discord server.
+    - name: Report security vulnerability
+      url: https://github.com/Hybrowse/hytale-session-token-broker/security/advisories/new
+      about: Please report security vulnerabilities via GitHub Security Advisories.
