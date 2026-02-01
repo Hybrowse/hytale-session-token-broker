@@ -24,6 +24,11 @@ This broker is part of the **Hybrowse Server Stack** — production-grade buildi
 - [Hybrowse/hytale-server-docker](https://github.com/Hybrowse/hytale-server-docker) — can fetch `session_token` / `identity_token` from this broker at container startup to skip interactive `/auth`
 - [Hybrowse/hyrouter](https://github.com/Hybrowse/hyrouter) — stateless QUIC entrypoint and referral router for routing players to backends
 
+## Image
+
+- **Image (Docker Hub)**: [`hybrowse/hytale-session-token-broker`](https://hub.docker.com/r/hybrowse/hytale-session-token-broker)
+- **Mirror (GHCR)**: [`ghcr.io/hybrowse/hytale-session-token-broker`](https://ghcr.io/hybrowse/hytale-session-token-broker)
+
 ## How it works
 
 - **Broker owns long-lived credentials** (refresh token) and stores them in a local JSON state file.
