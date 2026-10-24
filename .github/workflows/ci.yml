@@ -18,7 +18,10 @@ jobs:
 
       - name: Run tests
         run: |
-          go test -coverpkg=./... -coverprofile=coverage.out -covermode=atomic ./...
+          go test -race -coverpkg=./... -coverprofile=coverage.out -covermode=atomic ./...
+
+      - name: Check known Go vulnerabilities
+        run: go run golang.org/x/vuln/cmd/govulncheck@v1.9.0 ./...
 
       - name: Run example builds
         run: |

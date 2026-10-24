@@ -8,6 +8,7 @@ import (
 	"io"
 	"net/http"
 	"net/http/httptest"
+	"path/filepath"
 	"sync"
 	"sync/atomic"
 	"testing"
@@ -53,7 +54,10 @@ func TestBroker_MintGameSession_ConcurrentCalls_OnlyRefreshOnce(t *testing.T) {
 		"default": {ProfileUUIDs: []string{"p1"}},
 	}
 
-	ms := &memStore{st: store.State{Accounts: map[string]store.AccountState{"default": {RefreshToken: "r", AccessToken: "old-access", AccessTokenExpiresAt: now.Add(-time.Minute)}}}}
+	ms := store.NewFileStore(filepath.Join(t.TempDir(), "state.json"))
+	if err := ms.Save(context.Background(), store.State{Accounts: map[string]store.AccountState{"default": {RefreshToken: "r", AccessToken: "old-access", AccessTokenExpiresAt: now.Add(-time.Minute)}}}); err != nil {
+		t.Fatal(err)
+	}
 
 	b := New(Dependencies{Config: cfg, Store: ms, Now: func() time.Time { return now }})
 
@@ -88,10 +92,14 @@ func TestBroker_MintGameSession_ConcurrentCalls_OnlyRefreshOnce(t *testing.T) {
 	if got := atomic.LoadInt32(&refreshCalls); got != 1 {
 		t.Fatalf("expected exactly 1 refresh call, got %d", got)
 	}
-	if ms.st.Accounts["default"].RefreshToken != "new-refresh" {
+	st, err := ms.Load(context.Background())
+	if err != nil {
+		t.Fatal(err)
+	}
+	if st.Accounts["default"].RefreshToken != "new-refresh" {
 		t.Fatalf("expected refresh token to be updated")
 	}
-	if ms.st.Accounts["default"].AccessToken != "new-access" {
+	if st.Accounts["default"].AccessToken != "new-access" {
 		t.Fatalf("expected access token to be updated")
 	}
 }
