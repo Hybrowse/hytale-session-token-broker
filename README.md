@@ -47,7 +47,11 @@ Join the **Hybrowse Discord Server** to get help and stay up to date: https://hy
 - **Access tokens** are short-lived (typically ~1 hour). The persisted `access_token_expires_at` timestamp is stored as RFC3339 and usually in **UTC** (suffix `Z`).
 - **Refresh tokens** are the long-lived credential. The broker persists them in `state.json` and will refresh access tokens automatically on demand.
 
-The refresh token lifetime is not exposed by the API (no fixed TTL is documented), so the practical signal is whether refresh starts failing (for example `invalid_grant`).
+The [official provider authentication guide](https://support.hytale.com/hc/en-us/articles/45328341414043-Server-Provider-Authentication-Guide)
+documents a 30-day OAuth refresh token lifetime. Each successful refresh rotates
+both tokens and starts a fresh lifetime; the broker saves the replacement refresh
+token. If the broker is idle for more than 30 days, expect to sign in again with
+`auth-login-device`. Revocation can require a new login sooner (`invalid_grant`).
 
 The broker can be stopped for longer than an hour and still work after restart, as long as the refresh token is still valid and `state.json` is preserved.
 
